@@ -6,6 +6,9 @@ import ProtectedRoute, {
 import AuthPage from "./pages/AuthPage";
 import Navbar from "./components/Navbar";
 import EventsPage from "./pages/EventsPage";
+import EventDetailPage from "./pages/EventDetailPage";
+import CreateEventPage from "./pages/CreateEventPage";
+import MyEventsPage from "./pages/MyEventsPage";
 
 function Placeholder({ title }) {
   return (
@@ -42,16 +45,13 @@ export default function App() {
           />
 
           <Route path="/events" element={<EventsPage />} />
-          <Route
-            path="/events/:id"
-            element={<Placeholder title="Event detail" />}
-          />
+          <Route path="/events/:id" element={<EventDetailPage />} />
 
           <Route
             path="/events/new"
             element={
               <ProtectedRoute>
-                <Placeholder title="Create event" />
+                <CreateEventPage />
               </ProtectedRoute>
             }
           />
@@ -59,7 +59,7 @@ export default function App() {
             path="/my"
             element={
               <ProtectedRoute>
-                <Placeholder title="My events" />
+                <MyEventsPage />
               </ProtectedRoute>
             }
           />

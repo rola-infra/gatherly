@@ -8,6 +8,9 @@ import eventRoutes from "./routes/eventRoutes.js";
 import { protect } from "./middleware/protect.js";
 
 const app = express();
+
+app.set("query parser", "extended");
+
 app.use(cookieParser());
 
 app.use(
