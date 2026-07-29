@@ -7,8 +7,6 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // On app load, ask the backend "am I already logged in?"
-
   useEffect(() => {
     api
       .get("/me")
